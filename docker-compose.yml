@@ -1,0 +1,15 @@
+# sets up an instance of sunpi.co server
+version: '2'
+services:
+  # https://github.com/kylemanna/docker-openvpn/blob/master/docs/docker-compose.md
+  openvpn:
+    cap_add:
+     - NET_ADMIN
+    image: kylemanna/openvpn
+    container_name: openvpn
+    ports:
+     - "1194:1194/udp"
+    restart: always
+    volumes:
+     - ./openvpn-data/conf:/etc/openvpn
+
