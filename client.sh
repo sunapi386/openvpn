@@ -6,7 +6,7 @@ if [ $# -ne 1 ]; then
 fi
 
 # Generate a client certificate
-export CLIENTNAME="$1"
+export CLIENTNAME="`hostname`-$1"
 
 echo "Generating client certificate: " $CLIENTNAME
 
